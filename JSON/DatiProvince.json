@@ -1,0 +1,1 @@
+[{"ID":1,"Nome":"Perugia","IdRegione":1,"isCapoluogo":true,"NumAbitanti":150000},{"ID":2,"Nome":"Terni","IdRegione":1,"isCapoluogo":false,"NumAbitanti":100000},{"ID":3,"Nome":"Roma","IdRegione":2,"isCapoluogo":true,"NumAbitanti":5000000}]

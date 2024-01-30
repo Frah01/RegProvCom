@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- css, javascript -->
+		<link rel="stylesheet" href="./script/css/bootstrap5.3.2.css">
+		<link rel="stylesheet" href="./script/css/site.css">
+		
+		<script src="./script/js/jquery-3.7.1.js"></script>
+		<script src="./script/js/bootstrap5.3.2.bundle.js"></script>
+		<script src="./script/js/manageRegProvCom.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				populateRegion("idselectregione");
+				divManageHiddenVisibility("iddivregione", false);
+				
+				divManageHiddenVisibility("iddivprovincia", true);
+				
+				divManageHiddenVisibility("iddivcomune", true);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container" >
+			<div class="row">
+				<div class="offset-3 col-6">
+					<div class="mt-4 card text-center fw-semibold">
+						<div class="card-header">
+						  Featured
+						</div>
+						<div class="content d-flex justify-content-center">
+							<div class="card-body">
+								<form id="idFrmRegProvCom" name="frmRegProvCom"  >
+									<div class="mb-3" id="iddivregione">
+										Regioni: 
+										<select class="form-select" id="idselectregione" name="selectregione" onChange='SelectedRegion("idselectregione")' >
+										<option value="0" selected>Seleziona Regione</option>
+										<!--
+										<option value="1" >Umbria</option>
+										<option value="2" >Lazio</option>
+										<option value="3" >Friuli Venezia Giulia</option>
+										-->
+										</select>
+									</div>
+									<div class="mb-3" id="iddivprovincia" >
+										Province:
+										<select class="form-select" id="idselectprovincia" name="selectprovincia" onChange='SelectedProvincia("idselectprovincia")' >
+										<option value="0" selected="selected">Seleziona Provincia</option>
+										</select>
+									</div>
+									<div class="mb-3" id="iddivcomune" >
+										Comuni:
+										<select class="form-select" id="idselectcomune" name="selectcomune" onChange='SelectedComune("idselectregione","idselectprovincia","idselectcomune", "divResult")' >
+										<option value="0" selected="selected">Seleziona Comune</option>
+										</select>
+									</div> 
+										<input type="submit" value="Submit" hidden>  
+										<div class="row">
+											<div class="col">
+												<button id="iDSerialize" type="button" class="btn btn-sm btn-orange" onclick="SerializeObject()" >Serialize</button>
+												<button id="iDDeserialize"  type="button" class="btn btn-sm btn-danger" onclick="DeserializeObject()" >Deserialize</button>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col">
+												<div class="mt-2" id="divResult">
+													<!-- Risultato della selezione di Reg, Prov, Com -->
+												</div>
+												<div id="divResultJson">
+													<!-- Risultato Json -->
+												</div>
+											</div>
+										</div>
+								</form>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		<!-- css, javascript -->
+		</div>
+	</body>
+	
+</html>
